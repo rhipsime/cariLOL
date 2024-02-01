@@ -1,3 +1,9 @@
+
+/* Define a root variables for used colors */
+:root {
+    --primary-color: white;
+}
+
 * Basic Reset */
 *,
 *::before,
@@ -164,3 +170,4 @@ body {
 }
 
 /* Responsive Styles and other specific stylings as needed */
+
