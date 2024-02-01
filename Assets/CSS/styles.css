@@ -1,18 +1,4 @@
 /* Define a root variables for used colors */
 :root {
-    --primary-color: 
-    --secondary-color:
-    --text-color:
-}
-
-navbar {
-
-}
-
-header {
-
-}
-
-main {
-    
+    --primary-color: white;
 }
