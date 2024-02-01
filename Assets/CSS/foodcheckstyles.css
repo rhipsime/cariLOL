@@ -1,0 +1,89 @@
+* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+.navbar {
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navbar .logo {
+  font-weight: bold;
+}
+
+/* Lighter color for hover effect */
+.navbar a:hover {
+  color: #eb2ceb; 
+  text-decoration: underline; 
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/
+/* Main Content Styles */
+.main-content {
+  padding: 1rem;
+}
+  #nav-links .nav-item {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  #search-section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #search-input {
+    width: 300px;
+    padding: 10px;
+  }
+  
+  #search-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+  }
+  
+  #food-database-results, #recipes {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  #best-recipes-carousel {
+    margin: 20px;
+  }
+  
+  #main-footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Add additional styles for layout, typography and responsive design */
+  
