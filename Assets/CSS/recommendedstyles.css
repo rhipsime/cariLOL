@@ -1,0 +1,106 @@
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+.navbar {
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.navbar .logo {
+  font-weight: bold;
+}
+
+/* Lighter color for hover effect */
+.navbar a:hover {
+  color: #eb2ceb; 
+  text-decoration: underline; 
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 15px; 
+}
+
+#user-input-section, #result-section, {
+  background: #fff; /
+  border: 1px solid #ddd; 
+  padding: 20px; 
+  margin-bottom: 20px; 
+  border-radius: 5px; 
+}
+/
+/* Main Content Styles */
+.main-content {
+  padding: 1rem;
+}
+
+
+
+#user-input-section {
+  margin-bottom: 2rem;
+}
+
+#user-details-form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+#user-details-form input,
+#user-details-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+#user-details-form input[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#result-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f4f4f4;
+}
+
+#recipes-section {
+  /* Placeholder for recipe section styles */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Add media queries and other responsive styles as needed */
