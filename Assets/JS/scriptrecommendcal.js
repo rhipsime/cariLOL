@@ -34,20 +34,25 @@ async function recommendCal(age, height, weight, gender) {
     }
 }
 
-// The code below can be used for a separate API request but isn't connected to the button click event.
-const url = 'https://calories-daily-calculator.p.rapidapi.com/calories/?age=30&weight=80&height=182';
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77',
-        'X-RapidAPI-Host': 'calories-daily-calculator.p.rapidapi.com'
-    }
-};
+// Wrap the separate API request in an async function
+async function performSeparateRequest() {
+    const url = 'https://calories-daily-calculator.p.rapidapi.com/calories/?age=30&weight=80&height=182';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77',
+            'X-RapidAPI-Host': 'calories-daily-calculator.p.rapidapi.com'
+        }
+    };
 
-try {
-    const response = await fetch(url, options);
-    const result = await response.text();
-    console.log(result);
-} catch (error) {
-    console.error(error);
+    try {
+        const response = await fetch(url, options);
+        const result = await response.text();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
 }
+
+// Call the separate async function
+performSeparateRequest();
