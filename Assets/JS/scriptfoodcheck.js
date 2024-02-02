@@ -7,7 +7,7 @@ $(document).ready(function() {
 
         if (foodItem) {
 
-            fetchCalorieData(foodItem);
+            fetchCalorieData("Apple");
         } else {
 
             alert('Please enter a food item!');
