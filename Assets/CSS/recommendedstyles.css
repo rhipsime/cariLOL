@@ -21,14 +21,19 @@ body {
   padding: 1rem;
 }
 
+.carilogo {
+  margin-left: 10px;
+  margin-right: 15px; 
+}
+
 .navbar .logo {
   font-weight: bold;
 }
 
 /* Lighter color for hover effect */
 .navbar a:hover {
-  color: #eb2ceb; 
-  text-decoration: underline; 
+  color: #939d9b; 
+  text-decoration: none; 
 }
 
 
@@ -45,14 +50,14 @@ body {
   padding: 0 15px; 
 }
 
-#user-input-section, #result-section, {
-  background: #fff; /
-  border: 1px solid #ddd; 
+#user-input-section, #result-section {
+  background: #fff; 
+  border: 1px solid #ddd;
   padding: 20px; 
   margin-bottom: 20px; 
   border-radius: 5px; 
 }
-/
+
 /* Main Content Styles */
 .main-content {
   padding: 1rem;
@@ -89,10 +94,6 @@ body {
   margin-bottom: 2rem;
   padding: 1rem;
   background-color: #f4f4f4;
-}
-
-#recipes-section {
-  /* Placeholder for recipe section styles */
 }
 
 /* Footer Styles */
