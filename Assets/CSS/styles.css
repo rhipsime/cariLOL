@@ -162,20 +162,8 @@ body {
 }
 
 /* Footer Styles */
-.footer {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-.footer a:hover {
-  color: #dddddd; /* Lighter color for hover effect */
-  text-decoration: underline; /* Adds underline on hover */
-}
-
-.footer-content {
-  padding: 1rem 0;
+footer {
+  margin-top: 10px;
 }
 
 /* Responsive Styles and other specific stylings as needed */
