@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 async function recommendCal(age, height, weight) {
-    var apiKey = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+    var apiKey = '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77'; 
     var url = 'https://calorie-calculator.p.rapidapi.com/caloriecalculator.php?age=' + age + '&height=' + height + '&weight=' + weight;
     var options = {
         method: 'GET',
@@ -61,7 +61,7 @@ async function performSeparateRequest() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'YOUR_API_KEY', // Replace 'YOUR_API_KEY' with your actual API key
+            'X-RapidAPI-Key': '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77', 
             'X-RapidAPI-Host': 'calories-daily-calculator.p.rapidapi.com'
         }
     };
