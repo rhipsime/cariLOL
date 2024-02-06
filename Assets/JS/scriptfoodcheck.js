@@ -76,6 +76,8 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
 
         nutritionSection.append(title.append(calories, protein, fat, carbs));
 
+
+
         results.appendChild(nutritionSection);
 
     }
