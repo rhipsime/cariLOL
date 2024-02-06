@@ -3,44 +3,65 @@ $(document).ready(function() {
         var age = $('#age').val();
         var height = $('#height').val();
         var weight = $('#weight').val();
-        var gender = $('#gender').val();
         
-        var foodItem = $('#search-input').val().trim();
-
-        if (age && height && weight && gender && foodItem) {
-            recommendCal(age, height, weight, gender);
+        if (age && height && weight) {
+            recommendCal(age, height, weight);
         } else {
             alert('Please fill in all the fields!');
         }
     });
 });
 
-async function recommendCal(age, height, weight, gender) {
-    // Use working API key
-    var apiKey = '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77';
-    var queryURL = "https://calorie-calculator.p.rapidapi.com/caloriecalculator.php?age=" + age + "&height=" + height + "&weight=" + weight + "&gender=" + gender + "&apiKey=" + apiKey;
+async function recommendCal(age, height, weight) {
+    var apiKey = '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77'; 
+    var url = 'https://calorie-calculator.p.rapidapi.com/caloriecalculator.php?age=' + age + '&height=' + height + '&weight=' + weight;
+    var options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'calorie-calculator.p.rapidapi.com'
+        }
+    };
 
     try {
-        const response = await fetch(queryURL);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+        const response = await fetch(url, options);
         const data = await response.json();
-        console.log(queryURL);
-        console.log(data);
-        // Process the API response data here
+
+        // Display the fetched data in the result section
+        displayData(data);
     } catch (error) {
         console.error('Error during fetch operation:', error);
     }
+
+    // Perform the separate API request
+    performSeparateRequest();
 }
 
-// Wrap the separate API request in an async function
+function displayData(data) {
+    // Get the result section element
+    const resultSection = document.getElementById('result-output');
+
+    // Clear any previous content
+    resultSection.innerHTML = '';
+
+    // Create elements to display the data
+    const resultTitle = document.createElement('h2');
+    resultTitle.textContent = 'Recommended Calories:';
+
+    const calorieValue = document.createElement('p');
+    calorieValue.textContent = 'Calories: ' + data.calories;
+
+    // Append the elements to the result section
+    resultSection.appendChild(resultTitle);
+    resultSection.appendChild(calorieValue);
+}
+
 async function performSeparateRequest() {
     const url = 'https://calories-daily-calculator.p.rapidapi.com/calories/?age=30&weight=80&height=182';
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77',
+            'X-RapidAPI-Key': '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77', 
             'X-RapidAPI-Host': 'calories-daily-calculator.p.rapidapi.com'
         }
     };
@@ -54,5 +75,3 @@ async function performSeparateRequest() {
     }
 }
 
-// Call the separate async function
-performSeparateRequest();
