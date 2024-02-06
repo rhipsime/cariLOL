@@ -13,17 +13,19 @@ $(document).ready(function() {
 });
 
 async function recommendCal(age, height, weight) {
-    var apiKey = '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77';
-    var queryURL = "https://calorie-calculator.p.rapidapi.com/caloriecalculator.php?age=" + age + "&height=" + height + "&weight=" + weight + "&apiKey=" + apiKey;
+    var apiKey = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+    var url = 'https://calorie-calculator.p.rapidapi.com/caloriecalculator.php?age=' + age + '&height=' + height + '&weight=' + weight;
+    var options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': apiKey,
+            'X-RapidAPI-Host': 'calorie-calculator.p.rapidapi.com'
+        }
+    };
 
     try {
-        const response = await fetch(queryURL);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+        const response = await fetch(url, options);
         const data = await response.json();
-        console.log(queryURL);
-        console.log(data);
 
         // Display the fetched data in the result section
         displayData(data);
@@ -59,7 +61,7 @@ async function performSeparateRequest() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '922f974a17mshf6800fada2de78ap1ead14jsn3d1a5fbddb77',
+            'X-RapidAPI-Key': 'YOUR_API_KEY', // Replace 'YOUR_API_KEY' with your actual API key
             'X-RapidAPI-Host': 'calories-daily-calculator.p.rapidapi.com'
         }
     };
@@ -72,3 +74,4 @@ async function performSeparateRequest() {
         console.error(error);
     }
 }
+
