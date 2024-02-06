@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-    $("#search-button").on("click", function(event) {
-
+    $("#search-section").on("submit", function(event) {
         event.preventDefault();
 
         var foodItem = $("#search-input-food").val().trim();
@@ -16,10 +15,15 @@ $(document).ready(function() {
 
         } else {
 
-            alert("Please enter a food item. If no weight is provided, it will give the result per 100 grams!");
+            showModal("Please enter a food item. If no weight is provided, it will give the result per 100 grams!");
         }
     });
 });
+
+function showModal(message) {
+    $("#infoModal .modal-body").text(message);
+    $("#infoModal").modal("show");
+}
 
 function fetchCalorieData(foodItem, amount, unitWeight) {
 
