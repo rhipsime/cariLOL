@@ -96,6 +96,14 @@ body {
   background-color: #f4f4f4;
 }
 
+.img-fluid {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  align-items: center;
+  margin: 20px;
+  border-radius: 50%;
+}
 /* Footer Styles */
 
 
