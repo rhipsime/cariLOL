@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#search-button').on('click', function() {
         var height = $('#height').val();
         var weight = $('#weight').val();
-        
+
         if (height && weight) {
             recommendBMI(weight, height); // Pass weight first, then height
         } else {
@@ -42,7 +42,7 @@ function saveBMIDataToLocalStorage(data) {
     if (typeof(Storage) !== "undefined") {
         // Convert the data object to a JSON string
         const jsonData = JSON.stringify(data);
-        
+
         // Save the JSON string to localStorage with a key
         localStorage.setItem('bmiData', jsonData);
         console.log('BMI data saved to localStorage:', jsonData);
@@ -67,7 +67,7 @@ function displayBMIRecommendation(data) {
     bmiValue.textContent = 'BMI: ' + data.bmi.toFixed(1); // Round to 1 decimal point
 
     const heightValue = document.createElement('p');
-    heightValue.textContent = 'Height: ' + data.height + ' cm';
+    heightValue.textContent = 'Height: ' + data.height + ' m';
 
     const weightValue = document.createElement('p');
     weightValue.textContent = 'Weight: ' + data.weight + ' kg';
