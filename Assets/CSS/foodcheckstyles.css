@@ -103,3 +103,8 @@ body {
   border-top: 1px solid black;
   font-weight: lighter;
 }
+.linkRes {
+  background-color: #333;
+  opacity: 50;
+  color: white;
+}

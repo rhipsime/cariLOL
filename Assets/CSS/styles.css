@@ -1,9 +1,8 @@
-
 /* Define a root variables for used colors */
 :root {
-    --primary-color: white;
+  --primary-color: white;
 }
- 
+
 /* Basic Reset */
 *,
 *::before,
@@ -21,7 +20,7 @@ body {
 /* Navigation Styles */
 .carilogo {
   margin-left: 10px;
- margin-right: 15px; 
+  margin-right: 15px;
 }
 
 .navbar {
@@ -38,8 +37,8 @@ body {
 
 /* Lighter color for hover effect */
 .navbar a:hover {
-  color: #939d9b; 
-  text-decoration: none; 
+  color: #939d9b;
+  text-decoration: none;
 }
 
 .navbar a {
@@ -48,52 +47,50 @@ body {
   margin-right: 30px;
 }
 
-
 /* Main Content Styles */
-.about-section, h1 {
-  font-family: 'Times New Roman', Times, serif;
+.about-section,
+h1 {
+  font-family: "Times New Roman", Times, serif;
 }
 
 .main-content {
   padding: 1rem;
 }
 
-
 .feature-section {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom: 40px; /* Added more space beetwen clickable pictures and carousel */
-  }
-  
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px; /* Added more space beetwen clickable pictures and carousel */
+}
 
-  .feature {
-    flex: 1; /* Each feature will take equal space */
-    margin: 10px; /* Add margin for spacing */
-    overflow: hidden; /* Ensures the image zoom doesn't break the layout */
-    border-radius: 10px; 
-  }
-  .feature a {
-    display: block;
-    overflow: hidden; 
-  }
-  
-  /* Smooth transition for zoom effect */
-  .feature img {
-    width: 100%;
-    transition: transform 0.3s ease; 
-    display: block; 
-  }
-  
-  .feature a:hover img {
-    transform: scale(1.05); 
-  }
+.feature {
+  flex: 1; /* Each feature will take equal space */
+  margin: 10px; /* Add margin for spacing */
+  overflow: hidden; /* Ensures the image zoom doesn't break the layout */
+  border-radius: 10px;
+}
+.feature a {
+  display: block;
+  overflow: hidden;
+}
+
+/* Smooth transition for zoom effect */
+.feature img {
+  width: 100%;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.feature a:hover img {
+  transform: scale(1.05);
+}
 /* Each feature will take full width on smaller screens */
-  @media (max-width: 768px) {
-    .feature {
-      flex-basis: 100%; 
-    }
+@media (max-width: 768px) {
+  .feature {
+    flex-basis: 100%;
   }
+}
 
 .feature a {
   display: block;
@@ -101,41 +98,41 @@ body {
 
 /* About section styling */
 .about-section {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    min-height: 50vh; /* Ensure it takes at least half the height of the viewport */
-    padding: 2rem; /* Add some padding around the content */
-    text-align: center; /* Center-align the text */
-  }
-  
-  .about-section .container {
-    max-width: 80%; /* Set to a percentage of the viewport width */
-    /* Or you can use a specific pixel width, e.g., max-width: 1800px; */
-  }
-  
-  .about-section h2 {
-    font-size: 1.75rem; /* Larger text for the heading */
-    color: #333; /* Dark color for the heading */
-    margin-bottom: 1rem; /* Add some space below the heading */
-  }
-  
-  .about-section p {
-    color: #555; /* Slightly lighter color for the paragraph */
-    line-height: 1.6; /* Add line height for better readability */
-    margin-bottom: 1rem; /* Add some space below each paragraph */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  min-height: 50vh; /* Ensure it takes at least half the height of the viewport */
+  padding: 2rem; /* Add some padding around the content */
+  text-align: center; /* Center-align the text */
+}
+
+.about-section .container {
+  max-width: 80%; /* Set to a percentage of the viewport width */
+  /* Or you can use a specific pixel width, e.g., max-width: 1800px; */
+}
+
+.about-section h2 {
+  font-size: 1.75rem; /* Larger text for the heading */
+  color: #333; /* Dark color for the heading */
+  margin-bottom: 1rem; /* Add some space below the heading */
+}
+
+.about-section p {
+  color: #555; /* Slightly lighter color for the paragraph */
+  line-height: 1.6; /* Add line height for better readability */
+  margin-bottom: 1rem; /* Add some space below each paragraph */
+}
+
+@media (min-width: 992px) {
+  /* Adjusting for large screens */
+  .about-section .container .row {
+    justify-content: center; /* Center the columns in the row */
   }
 
-  @media (min-width: 992px) { /* Adjusting for large screens */
-    .about-section .container .row {
-      justify-content: center; /* Center the columns in the row */
-    }
-  
-    .about-section .container .row .col-lg-6 {
-      max-width: 100%; /* Allow column to take full width */
-    }
+  .about-section .container .row .col-lg-6 {
+    max-width: 100%; /* Allow column to take full width */
   }
-  
+}
 
 .photo-gallery {
   display: flex;
@@ -174,4 +171,3 @@ footer {
 }
 
 /* Responsive Styles and other specific stylings as needed */
-
