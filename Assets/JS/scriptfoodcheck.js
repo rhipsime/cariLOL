@@ -15,7 +15,9 @@ $(document).ready(function() {
 
         } else {
 
-            showModal("Please enter a food item. If no weight is provided, it will give the result per 100 grams!");
+
+            showModal("Please enter at least one food item. If no weight is provided, it will give the result per 100 grams!");
+
         }
     });
 });
@@ -27,9 +29,11 @@ function showModal(message) {
 
 function fetchCalorieData(foodItem, amount, unitWeight) {
 
-    var queryURL1 = "https://api.edamam.com/api/nutrition-data?app_id=adbad49e&app_key=%" + apiKey1 + "&nutrition-type=cooking&ingr=" + amount + "%20" + unitWeight + "%20" + foodItem;
+    var queryURL1 = "https://api.edamam.com/api/nutrition-data?app_id=adbad49e&app_key=%" + apiKeyNutri + "&nutrition-type=cooking&ingr=" + amount + "%20" + unitWeight + "%20" + foodItem;
 
-    var queryURL2 = "https://api.edamam.com/api/nutrition-data?app_id=adbad49e&app_key=%" + apiKey1 + "&nutrition-type=cooking&ingr=100%20g%20" + foodItem;
+    var queryURL2 = "https://api.edamam.com/api/nutrition-data?app_id=adbad49e&app_key=%" + apiKeyNutri + "&nutrition-type=cooking&ingr=100%20g%20" + foodItem;
+
+    var queryURL3 = "https://api.edamam.com/api/recipes/v2?type=public&q=" + foodItem + "&app_id=f783db65&app_key=" + apiKeyRecipe + "&random=true";
 
     if (foodItem && amount && unitWeight) {
 
@@ -37,11 +41,11 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
             .then(function(response) {
                 return response.json();
             })
-            .then(function(data) {
+            .then(function(dataNutri) {
                 console.log(queryURL1);
-                console.log(data);
+                console.log(dataNutri);
 
-                nutritionalInfo(data);
+                nutritionalInfo(dataNutri);
 
             })
 
@@ -51,39 +55,91 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
             .then(function(response) {
                 return response.json();
             })
-            .then(function(data) {
+            .then(function(dataNutri) {
                 console.log(queryURL2);
-                console.log(data);
+                console.log(dataNutri);
 
-                nutritionalInfo(data);
+                nutritionalInfo(dataNutri);
 
             })
     }
 
-    function nutritionalInfo(data) {
+    fetch(queryURL3)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(dataRecipe) {
+            console.log(queryURL3);
+            console.log(dataRecipe);
 
-        var results = $("<div>").addClass("row align-items-center d-flex justify-content-center");
+            console.log(dataRecipe.hits[1].recipe.label);
 
-        var nutritionSection = $("#nutritional-value").addClass("card col-md-2 bg-info p-1 border").empty();
+            recipe(dataRecipe);
+
+        })
+
+    var results = $("#results-section").addClass("d-flex flex-row align-items-start justify-content-left");
+
+
+    function nutritionalInfo(dataNutri) {
+
+        results.empty();
+
+        var nutritionSection = $("<div>").addClass("card col-md-3 bg-info p-1 border nutrition-div").empty();
 
         var units = unitWeight || "g";
 
-        var title = $("<h2>").addClass("card-title text-black").text("Nutritional data for " + data.totalWeight + units + " of " + foodItem);
+        var titleNutri = $("<h2>").addClass("card-title text-black").text("Nutritional data for " + dataNutri.totalWeight + units + " of " + foodItem);
 
-        var calories = $("<p>").addClass("card-body text-white").text("Calories: " + data.calories + " kcal");
+        var calories = $("<p>").addClass("card-body text-white").text("Calories: " + dataNutri.calories + " kcal");
 
-        var protein = $("<p>").addClass("card-body text-white").text("Protein: " + data.totalNutrients.PROCNT.quantity + " g");
+        var protein = $("<p>").addClass("card-body text-white").text("Protein: " + dataNutri.totalNutrients.FAT.quantity + " g");
 
-        var fat = $("<p>").addClass("card-body text-white").text("Fat: " + data.totalNutrients.FAT.quantity + " g");
+        var fat = $("<p>").addClass("card-body text-white").text("Fat: " + dataNutri.totalNutrients.FAT.quantity + " g");
 
-        var carbs = $("<p>").addClass("card-body text-white").text("Carbohydreates : " + data.totalNutrients.CHOCDF.quantity + " g");
+        var carbs = $("<p>").addClass("card-body text-white").text("Carbohydreates : " + dataNutri.totalNutrients.CHOCDF.quantity + " g");
 
-        nutritionSection.append(title.append(calories, protein, fat, carbs));
+        nutritionSection.append(titleNutri.append(calories, protein, fat, carbs));
 
-
-
-        results.appendChild(nutritionSection);
+        results.append(nutritionSection);
 
     }
+
+    function recipe(dataRecipe) {
+
+        var recipeSection = $("<div>").addClass("card col-md-9 d-flex flex-row justify-content-center bg-info").empty();
+
+        recipeSection.css("height", "auto")
+
+        var recipe1 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[0].recipe.image + "')");
+
+        var titleRecipe1 = $("<a>", {
+            href: dataRecipe.hits[0].recipe.url,
+            target: "_blank",
+            html: "<h4 class='card-title'>" + dataRecipe.hits[0].recipe.label + "</h4>"
+        });
+
+        var recipe2 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[10].recipe.image + "')");
+
+        var titleRecipe2 = $("<a>", {
+            href: dataRecipe.hits[10].recipe.url,
+            target: "_blank",
+            html: "<h4 class='card-title'>" + dataRecipe.hits[10].recipe.label + "</h4>"
+        });
+
+        var recipe3 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[19].recipe.image + "')");;
+
+        var titleRecipe3 = $("<a>", {
+            href: dataRecipe.hits[19].recipe.url,
+            target: "_blank",
+            html: "<h4 class='card-title'>" + dataRecipe.hits[19].recipe.label + "</h4>"
+        });
+
+        recipeSection.append(recipe1.append(titleRecipe1), recipe2.append(titleRecipe2), recipe3.append(titleRecipe3));
+
+        results.append(recipeSection);
+
+    }
+
 
 }
