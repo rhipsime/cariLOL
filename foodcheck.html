@@ -31,12 +31,12 @@
     </header>
 
     <main id="content">
-        <section id="search-section">
-            <input type="text" id="search-input-food" placeholder="Food Item">
+        <form id="search-section">
+            <input type="text" id="search-input-food" placeholder="Main dish Ingredients">
             <input type="text" id="search-input-amount" placeholder="Amount e.g. 500">
             <input type="text" id="search-input-units" placeholder="Units e.g. mg, g, kg, ml etc.">
-            <button id="search-button">SEARCH</button>
-        </section>
+            <button type="submit" id="search-button">SEARCH</button>
+        </form>
 
         <section id="results-section">
             <div id="nutritional-value">
@@ -69,6 +69,23 @@
             </div>
         </section>
     </main>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Attention Dear User!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #f1f1f1;">
