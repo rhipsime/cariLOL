@@ -85,19 +85,19 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
 
         results.empty();
 
-        var nutritionSection = $("<div>").addClass("d-block align-items-center justify-content-center nutrition-div").empty();
+        var nutritionSection = $("<div>").addClass("d-block align-items-center justify-content-center container-fluid nutrition-div").empty();
 
         var units = unitWeight || "g";
 
-        var titleNutri = $("<h2>").addClass("card-title text-black").text("Nutritional data for " + dataNutri.totalWeight + units + " of " + foodItem);
+        var titleNutri = $("<h2>").addClass("card-title nutri text-black").text("Nutritional data for " + dataNutri.totalWeight + units + " of " + foodItem);
 
-        var calories = $("<p>").addClass("card-body text-black").text("Calories: " + dataNutri.calories + " kcal");
+        var calories = $("<p>").addClass("card-body nutriDes text-black").text("Calories: " + dataNutri.calories + " kcal");
 
-        var protein = $("<p>").addClass("card-body text-black").text("Protein: " + dataNutri.totalNutrients.FAT.quantity + " g");
+        var protein = $("<p>").addClass("card-body nutriDes text-black").text("Protein: " + dataNutri.totalNutrients.FAT.quantity + " g");
 
-        var fat = $("<p>").addClass("card-body text-black").text("Fat: " + dataNutri.totalNutrients.FAT.quantity + " g");
+        var fat = $("<p>").addClass("card-body nutriDes text-black").text("Fat: " + dataNutri.totalNutrients.FAT.quantity + " g");
 
-        var carbs = $("<p>").addClass("card-body text-black").text("Carbohydreates : " + dataNutri.totalNutrients.CHOCDF.quantity + " g");
+        var carbs = $("<p>").addClass("card-body nutriDes text-black").text("Carbohydrates : " + dataNutri.totalNutrients.CHOCDF.quantity + " g");
 
         nutritionSection.append(titleNutri.append(calories, protein, fat, carbs));
 
@@ -107,11 +107,11 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
 
     function recipe(dataRecipe) {
 
-        var recipeSection = $("<div>").addClass("card col-md-9 d-flex flex-row align-items-center justify-content-center recContainer").empty();
+        var recipeSection = $("<div>").addClass("card col-md-9 d-flex flex-row align-items-center justify-content-center container-fluid recContainer").empty();
 
         recipeSection.css("height", "auto")
 
-        var recipe1 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div text-decoration-none").css("background-image", "url('" + dataRecipe.hits[0].recipe.image + "')");
+        var recipe1 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[0].recipe.image + "')");
 
         var titleRecipe1 = $("<a>", {
             href: dataRecipe.hits[0].recipe.url,
@@ -119,7 +119,7 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
             html: "<h4 class='card-title text-decoration-none'>" + dataRecipe.hits[0].recipe.label + "</h4>"
         });
 
-        var recipe2 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div text-decoration-none").css("background-image", "url('" + dataRecipe.hits[10].recipe.image + "')");
+        var recipe2 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[10].recipe.image + "')");
 
         var titleRecipe2 = $("<a>", {
             href: dataRecipe.hits[10].recipe.url,
@@ -127,7 +127,7 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
             html: "<h4 class='card-title text-decoration-none'>" + dataRecipe.hits[10].recipe.label + "</h4>"
         });
 
-        var recipe3 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div text-decoration-none").css("background-image", "url('" + dataRecipe.hits[19].recipe.image + "')");;
+        var recipe3 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[19].recipe.image + "')");;
 
         var titleRecipe3 = $("<a>", {
             href: dataRecipe.hits[19].recipe.url,
