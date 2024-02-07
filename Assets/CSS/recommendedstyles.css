@@ -23,7 +23,7 @@ body {
 
 .carilogo {
   margin-left: 10px;
-  margin-right: 15px; 
+  margin-right: 15px;
 }
 
 .navbar .logo {
@@ -32,10 +32,9 @@ body {
 
 /* Lighter color for hover effect */
 .navbar a:hover {
-  color: #939d9b; 
-  text-decoration: none; 
+  color: #939d9b;
+  text-decoration: none;
 }
-
 
 .navbar a {
   color: white;
@@ -45,25 +44,24 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto; 
-  padding: 0 15px; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-#user-input-section, #result-section {
-  background: #fff; 
+#user-input-section,
+#result-section {
+  background: #fff;
   border: 1px solid #ddd;
-  padding: 20px; 
-  margin-bottom: 20px; 
-  border-radius: 5px; 
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 /* Main Content Styles */
 .main-content {
   padding: 1rem;
 }
-
-
 
 #user-input-section {
   margin-bottom: 2rem;
@@ -105,6 +103,5 @@ body {
   border-radius: 50%;
 }
 /* Footer Styles */
-
 
 /* Add media queries and other responsive styles as needed */
