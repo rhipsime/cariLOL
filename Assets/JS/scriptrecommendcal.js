@@ -45,7 +45,7 @@ function displayBMIRecommendation(data) {
     bmiTitle.textContent = 'BMI Recommendation:';
 
     const bmiValue = document.createElement('p');
-    bmiValue.textContent = 'BMI: ' + data.bmi;
+    bmiValue.textContent = 'BMI: ' + data.bmi.toFixed(1); // Round to 1 decimal point
 
     const heightValue = document.createElement('p');
     heightValue.textContent = 'Height: ' + data.height + ' cm';
