@@ -54,7 +54,7 @@ function displayBMIRecommendation(data) {
     weightValue.textContent = 'Weight: ' + data.weight + ' kg';
 
     const weightCategory = document.createElement('p');
-    weightCategory.textContent = 'Weight Category: ' + data.weightCategory;
+    weightCategory.textContent = 'Weight Category: ' + determineWeightCategory(data.bmi);
 
     // Append the elements to the result section
     resultSection.appendChild(bmiTitle);
@@ -62,4 +62,16 @@ function displayBMIRecommendation(data) {
     resultSection.appendChild(heightValue);
     resultSection.appendChild(weightValue);
     resultSection.appendChild(weightCategory);
+}
+
+function determineWeightCategory(bmi) {
+    if (bmi < 18.5) {
+        return 'Underweight';
+    } else if (bmi >= 18.5 && bmi < 25) {
+        return 'Normal weight';
+    } else if (bmi >= 25 && bmi < 30) {
+        return 'Overweight';
+    } else {
+        return 'Obese';
+    }
 }
