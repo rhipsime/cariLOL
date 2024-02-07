@@ -78,26 +78,26 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
 
         })
 
-    var results = $("#results-section").addClass("d-flex flex-row align-items-start justify-content-left");
+    var results = $("#results-section").addClass("d-block row align-items-center");
 
 
     function nutritionalInfo(dataNutri) {
 
         results.empty();
 
-        var nutritionSection = $("<div>").addClass("card col-md-3 bg-info p-1 border nutrition-div").empty();
+        var nutritionSection = $("<div>").addClass("d-block align-items-center justify-content-center nutrition-div").empty();
 
         var units = unitWeight || "g";
 
         var titleNutri = $("<h2>").addClass("card-title text-black").text("Nutritional data for " + dataNutri.totalWeight + units + " of " + foodItem);
 
-        var calories = $("<p>").addClass("card-body text-white").text("Calories: " + dataNutri.calories + " kcal");
+        var calories = $("<p>").addClass("card-body text-black").text("Calories: " + dataNutri.calories + " kcal");
 
-        var protein = $("<p>").addClass("card-body text-white").text("Protein: " + dataNutri.totalNutrients.FAT.quantity + " g");
+        var protein = $("<p>").addClass("card-body text-black").text("Protein: " + dataNutri.totalNutrients.FAT.quantity + " g");
 
-        var fat = $("<p>").addClass("card-body text-white").text("Fat: " + dataNutri.totalNutrients.FAT.quantity + " g");
+        var fat = $("<p>").addClass("card-body text-black").text("Fat: " + dataNutri.totalNutrients.FAT.quantity + " g");
 
-        var carbs = $("<p>").addClass("card-body text-white").text("Carbohydreates : " + dataNutri.totalNutrients.CHOCDF.quantity + " g");
+        var carbs = $("<p>").addClass("card-body text-black").text("Carbohydreates : " + dataNutri.totalNutrients.CHOCDF.quantity + " g");
 
         nutritionSection.append(titleNutri.append(calories, protein, fat, carbs));
 
@@ -107,32 +107,32 @@ function fetchCalorieData(foodItem, amount, unitWeight) {
 
     function recipe(dataRecipe) {
 
-        var recipeSection = $("<div>").addClass("card col-md-9 d-flex flex-row justify-content-center bg-info").empty();
+        var recipeSection = $("<div>").addClass("card col-md-9 d-flex flex-row align-items-center justify-content-center recContainer").empty();
 
         recipeSection.css("height", "auto")
 
-        var recipe1 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[0].recipe.image + "')");
+        var recipe1 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div text-decoration-none").css("background-image", "url('" + dataRecipe.hits[0].recipe.image + "')");
 
         var titleRecipe1 = $("<a>", {
             href: dataRecipe.hits[0].recipe.url,
             target: "_blank",
-            html: "<h4 class='card-title'>" + dataRecipe.hits[0].recipe.label + "</h4>"
+            html: "<h4 class='card-title text-decoration-none'>" + dataRecipe.hits[0].recipe.label + "</h4>"
         });
 
-        var recipe2 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[10].recipe.image + "')");
+        var recipe2 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div text-decoration-none").css("background-image", "url('" + dataRecipe.hits[10].recipe.image + "')");
 
         var titleRecipe2 = $("<a>", {
             href: dataRecipe.hits[10].recipe.url,
             target: "_blank",
-            html: "<h4 class='card-title'>" + dataRecipe.hits[10].recipe.label + "</h4>"
+            html: "<h4 class='card-title text-decoration-none'>" + dataRecipe.hits[10].recipe.label + "</h4>"
         });
 
-        var recipe3 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div").css("background-image", "url('" + dataRecipe.hits[19].recipe.image + "')");;
+        var recipe3 = $("<div>").addClass("col-md-4 bg-info p-1 recipe-div text-decoration-none").css("background-image", "url('" + dataRecipe.hits[19].recipe.image + "')");;
 
         var titleRecipe3 = $("<a>", {
             href: dataRecipe.hits[19].recipe.url,
             target: "_blank",
-            html: "<h4 class='card-title'>" + dataRecipe.hits[19].recipe.label + "</h4>"
+            html: "<h4 class='card-title text-decoration-none'>" + dataRecipe.hits[19].recipe.label + "</h4>"
         });
 
         recipeSection.append(recipe1.append(titleRecipe1), recipe2.append(titleRecipe2), recipe3.append(titleRecipe3));

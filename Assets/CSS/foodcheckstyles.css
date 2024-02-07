@@ -76,9 +76,41 @@ body {
     flex-wrap: wrap;
   }
   
-  #best-recipes-carousel {
-    margin: 20px;
-  }
+  
   
   /* Add additional styles for layout, typography and responsive design */
-  
+  .nutrition-div {
+    justify-content: center;
+    border: black solid 2px;
+    color: black;
+    height: 450px;
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .recipe-div {
+    margin: 10px;
+    text-decoration: none;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+   
+  }
+  .recContainer {
+    background-color: white !important;
+    border: none;
+    text-decoration: none;
+  }
+  .card-title {
+    text-align: center;
+    text-decoration: none;
+  }
+  .card-title:visited {
+    text-decoration: none;
+  }
+  .card-title:hover {
+    text-decoration: none;
+  }
+  .card-title:active {
+    text-decoration: none;
+  }
