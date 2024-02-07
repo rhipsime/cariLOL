@@ -99,18 +99,12 @@ body {
   .recContainer {
     background-color: white !important;
     border: none;
-    text-decoration: none;
   }
-  .card-title {
-    text-align: center;
-    text-decoration: none;
-  }
-  .card-title:visited {
-    text-decoration: none;
-  }
-  .card-title:hover {
-    text-decoration: none;
-  }
-  .card-title:active {
-    text-decoration: none;
-  }
+.nutri {
+  font-weight: bolder;
+}
+
+.nutriDes {
+  border-top: 1px solid black;
+  font-weight: lighter;
+}
