@@ -15,7 +15,9 @@ $(document).ready(function() {
 
         } else {
 
+
             showModal("Please enter at least one food item. If no weight is provided, it will give the result per 100 grams!");
+
         }
     });
 });
