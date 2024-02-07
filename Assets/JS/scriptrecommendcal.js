@@ -11,9 +11,9 @@ $(document).ready(function() {
     });
 });
 
-async function recommendBMI(weight, height) { // Change the order of parameters
+async function recommendBMI(weight, height) {
     var apiKey = '760816e53fmsh77a4795b4cad944p131f2djsn992310e8cb24';
-    var url = 'https://body-mass-index-bmi-calculator.p.rapidapi.com/metric?weight=' + weight + '&height=' + height; // Change the order of parameters
+    var url = 'https://body-mass-index-bmi-calculator.p.rapidapi.com/metric?weight=' + weight + '&height=' + height;
     var options = {
         method: 'GET',
         headers: {
@@ -26,12 +26,31 @@ async function recommendBMI(weight, height) { // Change the order of parameters
         const response = await fetch(url, options);
         const data = await response.json();
 
+        // Save the BMI data to local storage
+        saveBMIDataToLocalStorage(data);
+
         // Display the fetched data
         displayBMIRecommendation(data);
     } catch (error) {
         console.error('Error during fetch operation:', error);
     }
 }
+
+// Function to save BMI data to localStorage
+function saveBMIDataToLocalStorage(data) {
+    // Check if localStorage is supported by the browser
+    if (typeof(Storage) !== "undefined") {
+        // Convert the data object to a JSON string
+        const jsonData = JSON.stringify(data);
+        
+        // Save the JSON string to localStorage with a key
+        localStorage.setItem('bmiData', jsonData);
+        console.log('BMI data saved to localStorage:', jsonData);
+    } else {
+        console.error('localStorage is not supported by the browser.');
+    }
+}
+
 
 function displayBMIRecommendation(data) {
     // Get the result section element
