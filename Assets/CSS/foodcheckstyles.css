@@ -23,7 +23,7 @@ body {
 
 .carilogo {
   margin-left: 10px;
-  margin-right: 15px; 
+  margin-right: 15px;
 }
 
 .navbar .logo {
@@ -32,10 +32,9 @@ body {
 
 /* Lighter color for hover effect */
 .navbar a:hover {
-  color: #939d9b; 
-  text-decoration: none; 
+  color: #939d9b;
+  text-decoration: none;
 }
-
 
 .navbar a {
   color: white;
@@ -43,67 +42,63 @@ body {
   margin-right: 20px;
 }
 
-
 /* Main Content Styles */
 .main-content {
   padding: 1rem;
 }
-  #nav-links .nav-item {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  
-  #search-section {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  #search-input {
-    width: 300px;
-    padding: 10px;
-  }
-  
-  #search-button {
-    padding: 10px 20px;
-    margin-left: 10px;
-  }
-  
-  #food-database-results, #recipes {
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  
-  
-  /* Add additional styles for layout, typography and responsive design */
-  .nutrition-div {
-    justify-content: center;
-    border: black solid 2px;
-    color: black;
-    height: 450px;
-    width: 300px;
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-  .recipe-div {
-    margin: 10px;
-    text-decoration: none;
-    width: 200px;
-    height: 200px;
-    justify-content: center;
-   
-  }
-  .recContainer {
-    background-color: white !important;
-    border: none;
-  }
+#nav-links .nav-item {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#search-section {
+  padding: 20px;
+  text-align: center;
+}
+
+#search-input {
+  width: 300px;
+  padding: 10px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+}
+
+#food-database-results,
+#recipes {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Add additional styles for layout, typography and responsive design */
+.nutrition-div {
+  justify-content: center;
+  border: black solid 2px;
+  color: black;
+  height: 450px;
+  width: 300px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.recipe-div {
+  margin: 10px;
+  text-decoration: none;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+}
+.recContainer {
+  background-color: white !important;
+  border: none;
+}
 .nutri {
   font-weight: bolder;
 }
-
 .nutriDes {
   border-top: 1px solid black;
   font-weight: lighter;
