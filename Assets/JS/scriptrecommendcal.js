@@ -49,12 +49,13 @@ function displayData(data) {
     resultTitle.textContent = 'Recommended Calories:';
 
     const calorieValue = document.createElement('p');
-    calorieValue.textContent = 'Calories: ' + data.calories;
+    calorieValue.textContent = 'Calories: ' + data.daily_needs; // Change here
 
     // Append the elements to the result section
     resultSection.appendChild(resultTitle);
     resultSection.appendChild(calorieValue);
 }
+
 
 async function performSeparateRequest() {
     const url = 'https://calories-daily-calculator.p.rapidapi.com/calories/?age=30&weight=80&height=182';
