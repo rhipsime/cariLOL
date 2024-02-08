@@ -52,19 +52,44 @@ body {
   margin-right: 20px;
 }
 
-#search-section {
-  padding: 20px;
+#heading{
   text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
 }
 
-#search-input {
-  width: 300px;
-  padding: 10px;
+#subheading{
+  text-align: center;
+  justify-content: center;
+}
+
+#search-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+#search-input-food,
+#search-input-amount,
+#search-input-units {
+  width: 25%;
+  margin-bottom: 16px;
 }
 
 #search-button {
-  padding: 10px 20px;
-  margin-left: 10px;
+  background-color: #9f50e9;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 #food-database-results,
@@ -75,7 +100,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* Add additional styles for layout, typography and responsive design */
+
 .nutrition-div {
   justify-content: center;
   border: black solid 2px;

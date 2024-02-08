@@ -42,12 +42,54 @@ body {
   margin-right: 20px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+#heading{
+  text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
 }
+
+#subheading{
+  text-align: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+#user-info-form {
+  text-align: center;
+}
+
+#user-info-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#user-info-form input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+#search-button {
+  background-color: #8d0a82;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
 
 #user-input-section,
 #result-section {
